@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import axios from 'axios'
 import auth from './auth'
+
+import NavBar from './components/NavBar'
+import User from './components/User'
+import Front from './components/Front'
+import Questions from './components/Questions'
+import SignUp from './components/SignUp'
+import LogIn from './components/Login'
+import LogOut from './components/Logout'
 
 class App extends Component {
 
@@ -22,16 +30,17 @@ class App extends Component {
     }
 
   render() {
+    const currentUser = this.state.currentUser
     return (
         <Router>
               <div className="App">
+                {currentUser
+                  ? <p>Current User: {currentUser.name}</p>
+                  : null}
                 <NavBar currentUser={this.state.currentUser} />
                 <Route exact path='/' component={Front} />
-                <Route path='/vip' render={() => (
-                    currentUser
-                    ? <Questions />
-                  : <Redirect to='/login' />
-              )} />
+                <Route path='/user' component={User} />
+                <Route path='/questions' component={Questions} />
                 <Route path='/signup' component={SignUp} />
                 <Route path='/login' render={() => (
                     <LogIn onLogIn={this.setCurrentUser.bind(this)} />
@@ -41,7 +50,7 @@ class App extends Component {
                   )}/>
               </div>
             </Router>
-    );
+    )
   }
 }
 

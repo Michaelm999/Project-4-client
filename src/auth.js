@@ -61,6 +61,23 @@ class Authorize {
   deleteQuestion(id) {
   return this.request({method: 'DELETE', url: '/questions/'+id})
 }
+
+editQuestion(id) {
+  return this.request({method: 'GET', url: '/questions/'+id})
+}
+
+updateQuestion(data, id) {
+  console.log(data);
+  return this.request({
+    method: 'PATCH',
+    url: '/questions/'+id,
+    data: {
+      title: this.refs.editTitle.value,
+      text: this.refs.editText.value
+    }
+  })
+}
+
   clearToken() {
     // remove token from localStorage:
     localStorage.removeItem('token')

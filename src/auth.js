@@ -1,7 +1,7 @@
 import axios from 'axios'
 import jwtDecode from 'jwt-decode'
 
-class AuthClient {
+class Authorize {
   constructor() {
     this.request = axios.create({
       baseURL: 'http://localhost:3001/api',
@@ -49,14 +49,25 @@ class AuthClient {
     return token
   }
 
+  getQuestions(){
+    return this.request({method: 'GET', url: '/questions'})
+  }
+
+  addNewQuestion(qData){
+    console.log(qData);
+    return this.request({method: 'POST', url: '/questions', data: qData})
+  }
+
+  deleteQuestion(id) {
+  return this.request({method: 'DELETE', url: '/questions/'+id})
+}
   clearToken() {
     // remove token from localStorage:
     localStorage.removeItem('token')
-
     // tell axios to stop sending with token:
     delete this.request.defaults.headers.common.token
 
   }
 }
 
-export default new AuthClient()
+export default new Authorize()

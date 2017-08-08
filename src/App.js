@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
-import axios from 'axios'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import auth from './auth'
 
 import NavBar from './components/NavBar'
@@ -35,7 +34,7 @@ class App extends Component {
         <Router>
               <div className="App">
                 {currentUser
-                  ? <p>Current User: {currentUser.name}</p>
+                  ? <p id='greeting'>Hello: {currentUser.name}</p>
                   : null}
                 <NavBar currentUser={this.state.currentUser} />
                 <Route exact path='/' component={Front} />

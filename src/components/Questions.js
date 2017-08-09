@@ -63,20 +63,23 @@ componentDidMount() {
         title: this.refs.editTitle.value,
         text: this.refs.editText.value
       }
-      auth.updateQuestion(id).then((response) => {
+      auth.updateQuestion(editData, id).then((response) => {
 
-      const qIndex = this.state.questions.findIndex((question) => {
+        const qIndex = this.state.questions.findIndex((question) => {
           return question._id === id
         })
 
+        console.log(qIndex);
+
         this.setState({
-        editing: null,
-        questions: [
-        ...this.state.questions.slice(0, qIndex),
-        response.data.question,
-        ...this.state.questions.slice(qIndex + 1)
-      ]
-    })
+          editing: null,
+          questions: [
+            ...this.state.questions.slice(0, qIndex),
+            response.data.question,
+            ...this.state.questions.slice(qIndex + 1)
+        ],
+        currentQuestion: response.data.question
+      })
   })
 }
 
@@ -107,8 +110,8 @@ renderQuestion(){
       //form for editing a question's title and text
       <div key={this.state.currentQuestion._id}>
       <form onSubmit={this.updateQuestion.bind(this, this.state.currentQuestion._id)}>
-      <input ref="editTitle" type="text" defaultValue={this.state.editing.title} />
-      <input ref="editText" type="text" defaultValue={this.state.editing.text} />
+      <input ref="editTitle" type="text" defaultValue={this.state.currentQuestion.title} />
+      <input ref="editText" type="text" defaultValue={this.state.currentQuestion.text} />
       <button>Submit</button>
       </form>
       <button onClick={this.abort.bind(this)}>Abort</button>
@@ -117,8 +120,8 @@ renderQuestion(){
       //Form for giving an answer
       <div key={this.state.currentQuestion._id}>
       <h1>{this.state.currentQuestion.title}</h1>
-      <p>{this.state.currentQuestion.text}</p>
-      <p>Asked by: {this.state.currentQuestion.asker}</p>
+      <p id='questiontext'>{this.state.currentQuestion.text}</p>
+      <p id='asker'>Asked by: {this.state.currentQuestion.asker}</p>
       <button id="editing" onClick={this.editQuestion.bind(this, this.state.currentQuestion._id)}>
       Edit</button>
       <form onSubmit={this.giveAnswer.bind(this)} >

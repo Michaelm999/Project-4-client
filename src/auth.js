@@ -71,10 +71,7 @@ updateQuestion(data, id) {
   return this.request({
     method: 'PATCH',
     url: '/questions/'+id,
-    data: {
-      title: this.refs.editTitle.value,
-      text: this.refs.editText.value
-    }
+    data: data
   })
 }
 

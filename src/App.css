@@ -10,13 +10,19 @@
 }
 
 #bio{
-  font-size: 18px;
+  font-size: 21px;
+  font-weight: lighter;
   font-family: "Times New Roman", Times, serif;
+}
+
+#username{
+  margin-top: 10px;
 }
 
 #greeting {
   font-size: 20px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin-bottom: 0px;
 }
 
 #question1{
@@ -48,12 +54,14 @@
 }
 #editing{
   font-size: 16px;
-  margin: 6px;
+  margin: 9px;
+  background-color: limegreen;
 }
 
 #answerButton{
   font-size: 16px;
   margin: 6px;
+  background-color: gold;
 }
 
 #questiontext{
@@ -61,8 +69,7 @@
   font-family: Tahoma, Geneva, sans-serif;
 }
 #asker{
-  font-size: 17px;
-  font-weight: bold;
+  font-size: 15px;
 }
 .newQuest button{
     font-size: 17px;
@@ -71,4 +78,8 @@
 .newQuest input{
   height: 25px;
   margin-right: 4px;
+}
+
+.answerspace{
+  border-style: groove;
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Index from './Index'
 import Form from './Form'
+import Answers from './Answers'
 import auth from '../auth'
 
 class Questions extends React.Component{
@@ -118,7 +119,7 @@ giveAnswer(id, evt){
 //Creates the area for editing/answering Questions
 renderQuestion(){
   return (
-    <div className="answerkey">
+    <div className="answerspace">
     {this.state.editing ? (
       //form for editing a question's title and text
       <div key={this.state.currentQuestion._id}>
@@ -134,9 +135,13 @@ renderQuestion(){
       <div key={this.state.currentQuestion._id}>
       <h1>{this.state.currentQuestion.title}</h1>
       <p id='questiontext'>{this.state.currentQuestion.text}</p>
-      <p id='asker'>Asked by: {this.state.currentQuestion.asker}</p>
+      <p id='asker'>Asked by: {this.state.currentQuestion.asker ? this.state.currentQuestion.asker : "anonymous"}</p>
       <button id="editing" onClick={this.editQuestion.bind(this, this.state.currentQuestion._id)}>
       Edit</button>
+    <ul>{this.state.currentQuestion.answers.map((answer, index) => (
+      <Answers key={answer._id} name={answer.text} parent={this} index={index} id={answer._id} />
+      ))}
+      </ul>
       <form onSubmit={this.giveAnswer.bind(this)} >
       <input ref="text" type='text' placeholder='Write your answer'></input>
       <button id='answerButton'>Answer</button>

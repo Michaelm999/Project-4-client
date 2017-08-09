@@ -15,11 +15,10 @@ class User extends React.Component {
 
       return (
       <div>
-      <h1>{currentUser.name}</h1>
-      <p>
+      <h1 id="username">{currentUser.name}</h1>
+      <p id="bio">
       Bio: {currentUser.bio}
       </p>
-
       </div>
       )
       }

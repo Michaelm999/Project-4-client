@@ -135,7 +135,7 @@ renderQuestion(){
       <div key={this.state.currentQuestion._id}>
       <h1>{this.state.currentQuestion.title}</h1>
       <p id='questiontext'>{this.state.currentQuestion.text}</p>
-      <p id='asker'>Asked by: {this.state.currentQuestion.asker ? this.state.currentQuestion.asker : "anonymous"}</p>
+      <p id='asker'>Asked by: {this.state.currentQuestion.asker ? this.state.currentQuestion.asker : "Anonymous"}</p>
       <button id="editing" onClick={this.editQuestion.bind(this, this.state.currentQuestion._id)}>
       Edit</button>
     <ul>{this.state.currentQuestion.answers.map((answer, index) => (
@@ -160,7 +160,8 @@ render() {
     return (
       <div>
       <h1>The Questions</h1>
-      <p>Feel free to ask away. Do not be afraid. There are <strong>no</strong> stupid questions here.</p>
+      <p>Hello. This is the question page. Feel free to ask any questions you may have.
+        <br /> Do not be afraid. There are <strong>no</strong> stupid questions here.</p>
       <Form parent={this}/>
       <ul id="questionlist">{this.state.questions.map((question, index) => (
         <Index key={question._id} name={question.title} parent={this} index={index} id={question._id} />

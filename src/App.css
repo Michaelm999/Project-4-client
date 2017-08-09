@@ -48,11 +48,12 @@
     margin-bottom: 6px;
     font-family: Verdana, Geneva, sans-serif;
 }
-.Index button{
+.Index button {
   font-size: 15px;
   background-color: red;
 }
-#editing{
+
+#editing {
   font-size: 16px;
   margin: 9px;
   background-color: limegreen;
@@ -71,13 +72,17 @@
 #asker{
   font-size: 15px;
 }
+
 .newQuest button{
     font-size: 17px;
     border-top: 7px;
+    background-color: cyan;
 }
 .newQuest input{
   height: 25px;
   margin-right: 4px;
+  font-size: 17px;
+  text-align: center;
 }
 
 .answerspace{

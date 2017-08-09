@@ -24,7 +24,7 @@ state = {
 
   render() {
     return (
-      <form onSubmit={this.handleFormSubmit.bind(this)}>
+      <form className='newQuest' onSubmit={this.handleFormSubmit.bind(this)}>
         <input ref="title" type="text" placeholder="Title" />
         <input ref="text" type="text" placeholder="Description" />
         <button>Ask Question</button>

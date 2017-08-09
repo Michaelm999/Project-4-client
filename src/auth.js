@@ -75,6 +75,25 @@ updateQuestion(data, id) {
   })
 }
 
+editUser(id) {
+  return this.request({method: 'GET', url: '/users/'+id})
+}
+
+updateUser(data, id) {
+  console.log(data);
+  return this.request({
+    method: 'PATCH',
+    url: '/users/'+id,
+    data: data
+  })
+}
+
+
+giveAnswer(data, id) {
+  console.log(data);
+  return this.request({method: 'POST', url: '/questions/:id/answers', data: data})
+}
+
   clearToken() {
     // remove token from localStorage:
     localStorage.removeItem('token')

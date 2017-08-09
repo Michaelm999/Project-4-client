@@ -2,7 +2,6 @@ import React from 'react'
 import Index from './Index'
 import Form from './Form'
 import auth from '../auth'
-import axios from 'axios'
 
 class Questions extends React.Component{
 
@@ -97,9 +96,23 @@ componentDidMount() {
 }
 
 //Function for posting an answer
-giveAnswer(evt){
+giveAnswer(id, evt){
   evt.preventDefault()
-  console.log("give the answer");
+  console.log("give the answer")
+  const ansData={
+    text: this.refs.text.value,
+    answerer: this.state.currentUser.name,
+    _questionId: this.state.currentQuestion._id
+  }
+  auth.giveAnswer(id, ansData).then((response) => {
+    console.log(response)
+    this.setState({
+      currentQuestion: [
+        ...this.state.currentQuestion.answers,
+      response.data
+    ]
+    })
+  })
 }
 
 //Creates the area for editing/answering Questions
@@ -125,7 +138,7 @@ renderQuestion(){
       <button id="editing" onClick={this.editQuestion.bind(this, this.state.currentQuestion._id)}>
       Edit</button>
       <form onSubmit={this.giveAnswer.bind(this)} >
-      <input type='text'></input>
+      <input ref="text" type='text' placeholder='Write your answer'></input>
       <button id='answerButton'>Answer</button>
     </form>
     </div>

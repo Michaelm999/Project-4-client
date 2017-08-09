@@ -5,16 +5,18 @@
 
 .NavBar {
   list-style-type: none;
-  font-size: 13px;
+  font-size: 18px;
   display: inline;
 }
 
-.App-intro {
-  font-size: large;
+#bio{
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 #greeting {
   font-size: 20px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
 #question1{
@@ -30,11 +32,15 @@
 }
 .Index{
     list-style-type: none;
-    font-size: 19px;
+    font-size: 25px;
+    font-weight: bold;
     margin-bottom: 6px;
     font-family: Verdana, Geneva, sans-serif;
 }
-
+.Index button{
+  font-size: 15px;
+  background-color: red;
+}
 #editing{
   font-size: 16px;
   margin: 6px;
@@ -43,7 +49,6 @@
 #answerButton{
   font-size: 16px;
   margin: 6px;
-  text-decoration-color: red;
 }
 
 #questiontext{
@@ -55,7 +60,8 @@
   font-weight: bold;
 }
 .newQuest button{
-    font-size: 21px;
+    font-size: 17px;
+    border-top: 7px;
 }
 .newQuest input{
   height: 25px;

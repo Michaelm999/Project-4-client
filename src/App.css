@@ -30,6 +30,11 @@
   height: 15%;
   float: left;
 }
+
+#questionlist{
+  padding-left: 0px;
+}
+
 .Index{
     list-style-type: none;
     font-size: 25px;

@@ -12,9 +12,11 @@ class Questions extends React.Component{
       questions: [],
       currentQuestion: { _id: '', title: '', text: '', asker: '', answers: []},
       showQuestion: false,
-      editing: null
+      editing: null,
+      currentUser: auth.getCurrentUser()
     }
   }
+
 //calling the questions
 componentDidMount() {
     auth.getQuestions().then((response) => {
@@ -97,22 +99,21 @@ componentDidMount() {
 }
 
 //Function for posting an answer
-giveAnswer(id, evt){
+giveAnswer(evt){
   evt.preventDefault()
   console.log("give the answer")
   const ansData={
-    text: this.refs.text.value,
+    text: this.refs.answer.value,
     answerer: this.state.currentUser.name,
     _questionId: this.state.currentQuestion._id
   }
-  auth.giveAnswer(id, ansData).then((response) => {
+  auth.giveAnswer(ansData).then((response) => {
     console.log(response)
     this.setState({
-      currentQuestion: [
-        ...this.state.currentQuestion.answers,
-      response.data
-    ]
+      currentQuestion: Object.assign({},this.state.currentQuestion,
+        {answers:response.data.question.answers})
     })
+    console.log("answer given", this.state);
   })
 }
 
@@ -143,9 +144,9 @@ renderQuestion(){
       ))}
       </ul>
       <form onSubmit={this.giveAnswer.bind(this)} >
-      <input ref="text" type='text' placeholder='Write your answer'></input>
+      <input ref="answer" type='text' placeholder='Write your answer'></input>
       <button id='answerButton'>Answer</button>
-    </form>
+      </form>
     </div>
       )
     }
@@ -159,8 +160,8 @@ render() {
   console.log(this.state);
     return (
       <div>
-      <h1>The Questions</h1>
-      <p>Hello. This is the question page. Feel free to ask any questions you may have.
+      <h1 id="questiontitle">The Questions!</h1>
+      <p id="questionintro">Hello. This is the list of all the questions asked. Feel free to ask any questions you may have.
         <br /> Do not be afraid. There are <strong>no</strong> stupid questions here.</p>
       <Form parent={this}/>
       <ul id="questionlist">{this.state.questions.map((question, index) => (

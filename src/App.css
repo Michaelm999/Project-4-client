@@ -6,17 +6,17 @@
 .NavBar {
   list-style-type: none;
   font-size: 18px;
-  display: inline;
+  padding-left: 0px;
 }
 
 #bio{
-  font-size: 21px;
-  font-weight: lighter;
+  font-size: 24px;
   font-family: "Times New Roman", Times, serif;
 }
 
 #username{
   margin-top: 10px;
+  font-size: 35px;
 }
 
 #greeting {
@@ -27,18 +27,28 @@
 
 #question1{
   width: 15%;
-  height: 15%;
+  height: 30%;
   float: right;
 }
 
 #question2{
   width: 15%;
-  height: 15%;
+  height: 30%;
   float: left;
+}
+#questiontitle{
+  font-size: 40px;
+  font-family: Verdana, Geneva, sans-serif
+}
+#questionintro{
+  padding-bottom: 25px;
+  font-family: "Helvetica", Arial, sans-serif;
+  font-size: 20px;
 }
 
 #questionlist{
   padding-left: 0px;
+  margin-top: 25px;
 }
 
 .Index{
@@ -50,6 +60,7 @@
 }
 .Index button {
   font-size: 15px;
+  font-weight: bold;
   background-color: red;
 }
 
@@ -72,9 +83,13 @@
 #asker{
   font-size: 15px;
 }
-
+#body{
+  font-size: 19px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
 .newQuest button{
     font-size: 17px;
+    font-weight: bold;
     border-top: 7px;
     background-color: cyan;
 }

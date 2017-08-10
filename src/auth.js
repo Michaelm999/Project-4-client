@@ -89,9 +89,9 @@ updateUser(data, id) {
 }
 
 
-giveAnswer(data, id) {
+giveAnswer(data) {
   console.log(data);
-  return this.request({method: 'POST', url: '/questions/:id/answers', data: data})
+  return this.request({method: 'POST', url: '/questions/' + data._questionId + '/answers', data: data})
 }
 
   clearToken() {

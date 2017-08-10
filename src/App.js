@@ -7,7 +7,7 @@ import NavBar from './components/NavBar'
 import User from './components/User'
 import Front from './components/Front'
 import Questions from './components/Questions'
-import SignUp from './components/SignUp'
+// import SignUp from './components/SignUp'
 import LogIn from './components/Login'
 import LogOut from './components/Logout'
 
@@ -40,7 +40,7 @@ class App extends Component {
                 <Route exact path='/' component={Front} />
                 <Route path='/user' component={User} />
                 <Route path='/questions' component={Questions} />
-                <Route path='/signup' component={SignUp} />
+
                 <Route path='/login' render={() => (
                     <LogIn onLogIn={this.setCurrentUser.bind(this)} />
                   )} />

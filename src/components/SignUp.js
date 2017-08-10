@@ -7,7 +7,7 @@ class SignUp extends React.Component {
     shouldRedirect: false
   }
 
-  FormSubmit(evt) {
+  formSubmit(evt) {
     evt.preventDefault()
     const formData = {
       name: this.refs.name.value,
@@ -29,7 +29,7 @@ class SignUp extends React.Component {
       : (
         <div className="SignUp">
           <h1>Create An Account</h1>
-          <form onSubmit={this.FormSubmit.bind(this)}>
+          <form onSubmit={this.formSubmit.bind(this)}>
             <input ref="name" type="text" placeholder="Name" />
             <input ref="email" type="text" placeholder="Email" />
             <input ref="password" type="password" placeholder="Password" />

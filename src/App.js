@@ -7,7 +7,7 @@ import NavBar from './components/NavBar'
 import User from './components/User'
 import Front from './components/Front'
 import Questions from './components/Questions'
-import SignUp from './components/SignUp.js'
+import SignUp from './components/SignUp'
 import LogIn from './components/Login'
 import LogOut from './components/Logout'
 

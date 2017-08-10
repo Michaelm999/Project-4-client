@@ -3,27 +3,6 @@
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-.NavBar {
-  font-size: 18px;
-  display: inline;
-  text-align: center;
-}
-
-.Navlink{
-  padding-left: 5px;
-
-}
-
-#bio{
-  font-size: 24px;
-  font-family: "Times New Roman", Times, serif;
-}
-
-#username{
-  margin-top: 10px;
-  font-size: 35px;
-}
-
 #greeting {
   font-size: 20px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -41,10 +20,46 @@
   height: 30%;
   float: left;
 }
+
+.NavBar {
+  font-size: 18px;
+  display: inline;
+  text-align: center;
+}
+
+.Navlink{
+  padding-left: 5px;
+}
+
+#username{
+  margin-top: 10px;
+  font-size: 35px;
+}
+
+#bio{
+  font-size: 24px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.Index{
+    list-style-type: none;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.Index button {
+  font-size: 15px;
+  font-weight: bold;
+  background-color: red;
+}
+
 #questiontitle{
   font-size: 40px;
   font-family: Verdana, Geneva, sans-serif
 }
+
 #questionintro{
   padding-bottom: 25px;
   font-family: "Helvetica", Arial, sans-serif;
@@ -68,17 +83,25 @@
   font-size: 17px;
   background-color: yellow;
 }
-.Index{
-    list-style-type: none;
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 6px;
-    font-family: Verdana, Geneva, sans-serif;
+
+
+#editing {
+  font-size: 16px;
+  margin: 9px;
+  background-color: limegreen;
 }
-.Index button {
+
+#questiontext{
+  font-size: 19px;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+#asker{
   font-size: 15px;
-  font-weight: bold;
-  background-color: red;
+}
+
+#answerform{
+  font-size: 16px;
 }
 
 .Answers{
@@ -87,15 +110,10 @@
     margin-bottom: 7px;
     font-family: Verdana, Geneva, sans-serif;
 }
+
 #answerer{
   font-size: 15px;
   font-family: "Times New Roman", Times, serif;
-}
-
-#editing {
-  font-size: 16px;
-  margin: 9px;
-  background-color: limegreen;
 }
 
 #answerButton{
@@ -104,32 +122,9 @@
   background-color: cyan;
 }
 
-#answerform{
-  font-size: 16px;
-}
-
-#questiontext{
-  font-size: 19px;
-  font-family: Tahoma, Geneva, sans-serif;
-}
-#asker{
-  font-size: 15px;
-}
 #body{
   font-size: 19px;
   font-family: Tahoma, Geneva, sans-serif;
-}
-.newQuest button{
-    font-size: 17px;
-    font-weight: bold;
-    border-top: 7px;
-    background-color: cyan;
-}
-.newQuest input{
-  height: 25px;
-  margin-right: 4px;
-  font-size: 17px;
-  text-align: center;
 }
 
 .answerspace{

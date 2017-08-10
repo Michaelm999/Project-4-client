@@ -7,7 +7,7 @@ class LogIn extends React.Component {
     shouldRedirect: false
   }
 
-  handleFormSubmit(evt) {
+  formSubmit(evt) {
     evt.preventDefault()
     const formData = {
       email: this.refs.email.value,
@@ -31,7 +31,7 @@ class LogIn extends React.Component {
       : (
         <div className="LogIn">
           <h1>Log In</h1>
-          <form onSubmit={this.handleFormSubmit.bind(this)}>
+          <form onSubmit={this.formSubmit.bind(this)}>
             <input ref="email" type="text" placeholder="Email" />
             <input ref="password" type="password" placeholder="Password" />
             <button>Log In</button>

@@ -44,7 +44,10 @@ componentDidMount() {
         showQuestion: true
       })
   }
-
+//button to close the showQuestion page
+  close() {
+    this.setState({showQuestion: false})
+  }
 //set the state for editing.
      editQuestion(id) {
         console.log("Editing:", id)
@@ -91,6 +94,7 @@ componentDidMount() {
       auth.deleteQuestion(id).then((response) => {
       console.log(response)
       this.setState({
+        showQuestion: false,
         questions: this.state.questions.filter((question) => {
           return question._id !== id
         })
@@ -123,13 +127,13 @@ renderQuestion(){
     <div className="answerspace">
     {this.state.editing ? (
       //form for editing a question's title and text
-      <div key={this.state.currentQuestion._id}>
+      <div id="editform" key={this.state.currentQuestion._id}>
       <form onSubmit={this.updateQuestion.bind(this, this.state.currentQuestion._id)}>
       <input ref="editTitle" type="text" defaultValue={this.state.currentQuestion.title} />
       <input ref="editText" type="text" defaultValue={this.state.currentQuestion.text} />
       <button>Submit</button>
       </form>
-      <button onClick={this.abort.bind(this)}>Abort</button>
+      <button className="abortbutton" onClick={this.abort.bind(this)}>Abort</button>
       </div>
     ) : (
       //Form for giving an answer
@@ -139,13 +143,15 @@ renderQuestion(){
       <p id='asker'>Asked by: {this.state.currentQuestion.asker ? this.state.currentQuestion.asker : "Anonymous"}</p>
       <button id="editing" onClick={this.editQuestion.bind(this, this.state.currentQuestion._id)}>
       Edit</button>
-    <ul>{this.state.currentQuestion.answers.map((answer, index) => (
-      <Answers key={answer._id} name={answer.text} parent={this} index={index} id={answer._id} />
+    <h2>Answers:</h2>
+    <ul className='Answers'>{this.state.currentQuestion.answers.map((answer, index) => (
+      <Answers key={answer._id} name={answer.text} answerer={answer.answerer} parent={this} index={index} id={answer._id} />
       ))}
       </ul>
       <form onSubmit={this.giveAnswer.bind(this)} >
-      <input ref="answer" type='text' placeholder='Write your answer'></input>
+      <input id='answerform' ref="answer" type='text' placeholder='Write your answer'></input>
       <button id='answerButton'>Answer</button>
+      <button className="abortbutton" onClick={this.close.bind(this)}>Close Page</button>
       </form>
     </div>
       )

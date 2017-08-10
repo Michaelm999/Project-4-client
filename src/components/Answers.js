@@ -3,8 +3,9 @@ import React from 'react'
 const Answers = (props) => {
 
     return(
-    <div className='Answers' id={props.title}>
+    <div id={props.title}>
     <li>{props.name}</li>
+    <li id="answerer">Answered by: {props.answerer}</li>
     </div>
   )
 

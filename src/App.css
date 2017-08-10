@@ -4,9 +4,14 @@
 }
 
 .NavBar {
-  list-style-type: none;
   font-size: 18px;
-  padding-left: 0px;
+  display: inline;
+  text-align: center;
+}
+
+.Navlink{
+  padding-left: 5px;
+
 }
 
 #bio{
@@ -51,6 +56,18 @@
   margin-top: 25px;
 }
 
+#editform button{
+  margin: 5px 2px;
+  font-size: 17px;
+}
+#editform input{
+  height: 25px;
+  font-size: 17px;
+}
+.abortbutton{
+  font-size: 17px;
+  background-color: yellow;
+}
 .Index{
     list-style-type: none;
     font-size: 25px;
@@ -64,6 +81,17 @@
   background-color: red;
 }
 
+.Answers{
+    list-style-type: none;
+    padding-left: 0px;
+    margin-bottom: 7px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+#answerer{
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+}
+
 #editing {
   font-size: 16px;
   margin: 9px;
@@ -73,7 +101,11 @@
 #answerButton{
   font-size: 16px;
   margin: 6px;
-  background-color: gold;
+  background-color: cyan;
+}
+
+#answerform{
+  font-size: 16px;
 }
 
 #questiontext{
@@ -101,5 +133,6 @@
 }
 
 .answerspace{
+  margin-top: 21px;
   border-style: groove;
 }

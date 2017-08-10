@@ -4,7 +4,7 @@ import jwtDecode from 'jwt-decode'
 class Authorize {
   constructor() {
     this.request = axios.create({
-      baseURL: 'http://localhost:3001/api',
+      baseURL: 'https://serene-chamber-30424.herokuapp.com/api',
       headers: {
         common: {
           token: this.getToken()

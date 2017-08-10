@@ -3,10 +3,10 @@ import { NavLink } from 'react-router-dom'
 
 const NavBar = (props) => {
   return(
-
+    //changes the NavBar when the user is logged in
     <div className="NavBar">
     <NavLink exact to='/'>Home</NavLink>
-    //changes the NavBar when the user is logged in
+
     {props.currentUser
       //shows this when the user is logged in
     ? (

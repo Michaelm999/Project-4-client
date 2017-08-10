@@ -92,8 +92,8 @@ componentDidMount() {
       deleteQuestion(id){
         console.log(id);
       auth.deleteQuestion(id).then((response) => {
-      console.log(response)
-      this.setState({
+        console.log(response)
+        this.setState({
         showQuestion: false,
         questions: this.state.questions.filter((question) => {
           return question._id !== id
@@ -173,7 +173,7 @@ render() {
       <ul id="questionlist">{this.state.questions.map((question, index) => (
         <Index key={question._id} name={question.title} parent={this} index={index} id={question._id} />
         ))}
-        </ul>
+      </ul>
 
       {this.state.showQuestion ? this.renderQuestion() : null}
       </div>

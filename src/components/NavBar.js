@@ -6,7 +6,9 @@ const NavBar = (props) => {
 
     <div className="NavBar">
     <NavLink exact to='/'>Home</NavLink>
+    //changes the NavBar when the user is logged in
     {props.currentUser
+      //shows this when the user is logged in
     ? (
       <div>
         <NavLink to='/user'>User</NavLink>
@@ -14,6 +16,7 @@ const NavBar = (props) => {
         <NavLink to='/logout' className="Navlink">LogOut</NavLink>
       </div>
     ) : (
+      //otherwise
       <div>
     <NavLink to='/login'>Log In</NavLink>
     <NavLink to='/signup' className="Navlink">Sign Up</NavLink>

@@ -5,7 +5,6 @@ class LogOut extends React.Component {
   componentDidMount() {
     this.props.onLogout()
   }
-
   render() {
     return (
       <Redirect to='/' />

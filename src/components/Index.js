@@ -1,5 +1,5 @@
 import React from 'react'
-
+//form for displaying the list of questions
 const Index = (props) => {
 
     return(

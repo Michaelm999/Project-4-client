@@ -5,7 +5,7 @@ import Answers from './Answers'
 import auth from '../auth'
 
 class Questions extends React.Component{
-
+  
   constructor(props){
     super(props)
     this.state = {
@@ -166,7 +166,7 @@ render() {
   console.log(this.state);
     return (
       <div>
-      <h1 id="questiontitle">The Questions!</h1>
+      <h1 id="questiontitle">The Questions</h1>
       <p id="questionintro">Hello. This is the list of all the questions asked. Feel free to ask any questions you may have.
         <br /> Do not be afraid. There are <strong>no</strong> stupid questions here.</p>
       <Form parent={this}/>

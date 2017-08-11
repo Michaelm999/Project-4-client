@@ -12,7 +12,7 @@ class Authorize {
       }
     })
   }
-
+  
   signUp(userInfo) {
     return this.request({method: 'POST', url: '/users', data: userInfo})
       .then((response) => response.data.success)

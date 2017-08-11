@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import auth from './auth'
 
 import NavBar from './components/NavBar'
@@ -39,7 +39,12 @@ class App extends Component {
                 <NavBar currentUser={this.state.currentUser} />
                 <Route exact path='/' component={Front} />
                 <Route path='/user' component={User} />
-                <Route path='/questions' component={Questions} />
+                <Route path='/questions' render={() => (
+                    currentUser
+                    ? <Questions />
+                    : <Redirect to='/login' />
+                  )} />
+
                 <Route path='/signup' component={SignUp} />
                 <Route path='/login' render={() => (
                     <LogIn onLogIn={this.setCurrentUser.bind(this)} />

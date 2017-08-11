@@ -21,7 +21,9 @@ class SignUp extends React.Component {
       if(success) this.setState({shouldRedirect: true})
     })
   }
-//does require user to login after logging in due to the need for a jsonwebtoken
+  
+//does require user to login after signing up.
+//Once signUp is done, send the user straigth to the login component.
   render() {
     return (
       this.state.shouldRedirect

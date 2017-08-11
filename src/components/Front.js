@@ -1,5 +1,5 @@
 import React from 'react'
-
+//The Front page you will see when you first open the app.
 const Front = (props) => {
   return (
     <div>

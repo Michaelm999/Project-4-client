@@ -12,7 +12,7 @@ class Authorize {
       }
     })
   }
-  
+
   signUp(userInfo) {
     return this.request({method: 'POST', url: '/users', data: userInfo})
       .then((response) => response.data.success)
@@ -44,11 +44,12 @@ class Authorize {
   setToken(token) {
     // save token to localStorage:
     localStorage.setItem('token', token)
-    // tell axios to always include this token in headers:
+    // tell axios to always include this token:
     this.request.defaults.headers.common.token = token
     return token
   }
 
+//all of the axios requests pass through auth beneath here.
   getQuestions(){
     return this.request({method: 'GET', url: '/questions'})
   }
@@ -75,29 +76,18 @@ updateQuestion(data, id) {
   })
 }
 
-editUser(id) {
-  return this.request({method: 'GET', url: '/users/'+id})
-}
 
-updateUser(data, id) {
-  console.log(data);
-  return this.request({
-    method: 'PATCH',
-    url: '/users/'+id,
-    data: data
-  })
-}
-
-
+//posting an answer
 giveAnswer(data) {
   console.log(data);
   return this.request({method: 'POST', url: '/questions/' + data._questionId + '/answers', data: data})
 }
 
   clearToken() {
-    // remove token from localStorage:
+    // removes the assigned token from localStorage
     localStorage.removeItem('token')
-    // tell axios to stop sending with token:
+    // tell axios to stop sending with the given token.
+    //this works the same as logging out.
     delete this.request.defaults.headers.common.token
 
   }

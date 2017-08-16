@@ -60,7 +60,6 @@ class User extends React.Component {
       <p id="bio">
       Bio: {currentUser.bio}
       </p>
-      <ul>{currentUser.questions}</ul>
       <button id="editing" onClick={this.editUser.bind(this, currentUser._id)}>Edit</button>
       </div>
       )}

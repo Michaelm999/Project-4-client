@@ -76,6 +76,18 @@ updateQuestion(data, id) {
   })
 }
 
+editUser(id) {
+   return this.request({method: 'GET', url: '/users/'+id})
+ }
+
+ updateUser(data, id) {
+   console.log(data);
+  return this.request({
+    method: 'PATCH',
+     url: '/users/'+id,
+     data: data
+  })
+}
 
 //posting an answer
 giveAnswer(data) {

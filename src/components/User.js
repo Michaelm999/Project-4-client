@@ -45,11 +45,11 @@ class User extends React.Component {
       <div className="userPage">
       {this.state.editing ? (
         //form for editing a question's title and text
-        <div className="edit-section" key={currentUser._id}>
-        <form onSubmit={this.updateUser.bind(this, currentUser._id)}>
-        <input ref="editName" type="text" defaultValue={currentUser.name} />
-        <input ref="editBio" type="text" defaultValue={currentUser.bio} />
-        <button>Submit</button>
+        <div key={currentUser._id}>
+        <form className="edit-section"onSubmit={this.updateUser.bind(this, currentUser._id)}>
+        <input className="editform" ref="editName" type="text" defaultValue={currentUser.name} />
+        <input className="editform" ref="editBio" type="text" defaultValue={currentUser.bio} />
+        <button className="submitbutton">Submit</button>
         </form>
         <button className="abortbutton" onClick={this.abort.bind(this)}>Abort</button>
         </div>

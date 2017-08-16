@@ -143,5 +143,16 @@
 
 .edit-section {
   margin-top: 25px;
+}
+
+.editform {
+  font-size: 21px;
+  padding-right: 10px;
+  margin-bottom: 8px;
+}
+
+.submitbutton {
+  background-color: cyan;
+  padding-top: 6px;
   font-size: 17px;
 }

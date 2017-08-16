@@ -51,7 +51,7 @@ class User extends React.Component {
         <input ref="editBio" type="text" defaultValue={currentUser.bio} />
         <button>Submit</button>
         </form>
-        <button onClick={this.abort.bind(this)}>Abort</button>
+        <button className="abortbutton" onClick={this.abort.bind(this)}>Abort</button>
         </div>
         ):(
       <div>

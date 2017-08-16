@@ -45,7 +45,7 @@ class User extends React.Component {
       <div className="userPage">
       {this.state.editing ? (
         //form for editing a question's title and text
-        <div key={currentUser._id}>
+        <div className="edit-section" key={currentUser._id}>
         <form onSubmit={this.updateUser.bind(this, currentUser._id)}>
         <input ref="editName" type="text" defaultValue={currentUser.name} />
         <input ref="editBio" type="text" defaultValue={currentUser.bio} />

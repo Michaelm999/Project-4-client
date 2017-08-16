@@ -1,6 +1,5 @@
 import React from 'react'
 import auth from '../auth'
-import Index from './Index'
 
 class User extends React.Component {
   constructor(props){

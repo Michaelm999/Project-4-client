@@ -34,7 +34,6 @@ componentDidMount() {
             this.setState({
               questions: [...this.state.questions, response.data]
             })
-            // this.state.currentUser.questions.push(response.data)
           })
       }
 //show an individual question, and provide a space for answering

@@ -21,7 +21,7 @@ class SignUp extends React.Component {
       if(success) this.setState({shouldRedirect: true})
     })
   }
-  
+
 //does require user to login after signing up.
 //Once signUp is done, send the user straigth to the login component.
   render() {
@@ -32,11 +32,11 @@ class SignUp extends React.Component {
         <div className="SignUp">
           <h1>Create An Account</h1>
           <form onSubmit={this.formSubmit.bind(this)}>
-            <input ref="name" type="text" placeholder="Name" />
-            <input ref="email" type="text" placeholder="Email" />
-            <input ref="password" type="password" placeholder="Password" />
-            <input ref="bio" type="text" placeholder="Bio" />
-            <button>Create Account</button>
+            <input className="input is-info" ref="name" type="text" placeholder="Name" />
+            <input className="input is-info" ref="email" type="text" placeholder="Email" />
+            <input className="input is-info" ref="password" type="password" placeholder="Password" />
+            <input className="input is-info" ref="bio" type="text" placeholder="Bio" />
+            <button className="button is-success">Create Account</button>
           </form>
         </div>
       )

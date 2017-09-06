@@ -1,6 +1,7 @@
 import React from 'react'
 import auth from '../auth'
 import { Redirect } from 'react-router-dom'
+import 'bulma/css/bulma.css'
 
 class LogIn extends React.Component {
   state = {
@@ -32,9 +33,9 @@ class LogIn extends React.Component {
         <div className="LogIn">
           <h1>Log In</h1>
           <form onSubmit={this.formSubmit.bind(this)}>
-            <input ref="email" type="text" placeholder="Email" />
-            <input ref="password" type="password" placeholder="Password" />
-            <button>Log In</button>
+            <input className = "input is-danger" ref="email" type="text" placeholder="Email" />
+            <input className ="input is-info" ref="password" type="password" placeholder="Password" />
+            <button className="button is-success">Log In</button>
           </form>
         </div>
       )

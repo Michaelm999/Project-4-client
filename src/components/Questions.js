@@ -138,7 +138,7 @@ renderQuestion(){
     ) : (
       //Form for giving an answer
       <div key={this.state.currentQuestion._id}>
-      <h1>{this.state.currentQuestion.title}</h1>
+      <h1 id='currentqtitle'>{this.state.currentQuestion.title}</h1>
       <p id='questiontext'>{this.state.currentQuestion.text}</p>
       <p id='asker'>Asked by: {this.state.currentQuestion.asker ? this.state.currentQuestion.asker : "Anonymous"}</p>
       <button id="editing" onClick={this.editQuestion.bind(this, this.state.currentQuestion._id)}>

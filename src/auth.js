@@ -53,7 +53,9 @@ class Authorize {
   getQuestions(){
     return this.request({method: 'GET', url: '/questions'})
   }
-
+  getUserQuestions(){
+    return this.request({method: 'GET', url: '/user-questions'})
+  }
   addNewQuestion(qData){
     console.log(qData);
     return this.request({method: 'POST', url: '/questions', data: qData})

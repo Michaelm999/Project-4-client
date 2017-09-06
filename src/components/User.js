@@ -1,5 +1,6 @@
 import React from 'react'
 import auth from '../auth'
+import Index from './Index'
 
 class User extends React.Component {
   constructor(props){
@@ -10,6 +11,7 @@ class User extends React.Component {
       }
    }
 
+  //edit User bio.
      editUser(id) {
         console.log("Editing:", id)
         auth.editUser(id).then((response) => {

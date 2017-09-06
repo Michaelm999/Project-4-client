@@ -10,14 +10,14 @@ const NavBar = (props) => {
     {props.currentUser
       //shows this when the user is logged in
     ? (
-      <div>
+      <div className="navbar-content">
         <NavLink to='/user'>User</NavLink>
         <NavLink to='/questions' className="Navlink">Questions</NavLink>
         <NavLink to='/logout' className="Navlink">LogOut</NavLink>
       </div>
     ) : (
       //otherwise
-      <div>
+      <div class="navbar-content">
     <NavLink to='/login'>Log In</NavLink>
     <NavLink to='/signup' className="Navlink">Sign Up</NavLink>
     </div>

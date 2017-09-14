@@ -1,15 +1,24 @@
 import React from 'react'
 import auth from '../auth'
-import Index from './Index'
+import userIndex from './userIndex'
 
 class User extends React.Component {
   constructor(props){
     super(props)
     this.state = {
       currentUser: auth.getCurrentUser(),
-      editing: null
+      editing: null,
+      questions: []
       }
    }
+
+   componentDidMount() {
+  // this is where an API call for protected content would be made.
+  auth.getUserQuestions().then(response => {
+    console.log(response.data)
+    this.setState({questions: response.data})
+  })
+}
 
   //edit User bio.
      editUser(id) {
@@ -64,6 +73,12 @@ class User extends React.Component {
       <button id="editing" onClick={this.editUser.bind(this, currentUser._id)}>Edit</button>
       </div>
       )}
+      <div>
+      <ul id="questionlist">{this.state.questions.map((question, index) => (
+        <userIndex key={question._id} name={question.title} parent={this} index={index} id={question._id} />
+        ))}
+      </ul>
+      </div>
       </div>
       )
      }

@@ -1,7 +1,7 @@
 import React from 'react'
 import auth from '../auth'
 import { Redirect } from 'react-router-dom'
-import 'bulma/css/bulma.css'
+
 
 class LogIn extends React.Component {
   state = {

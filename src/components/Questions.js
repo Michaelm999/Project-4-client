@@ -20,8 +20,6 @@ class Questions extends React.Component{
 //calling the questions
 componentDidMount() {
     auth.getQuestions().then((response) => {
-        console.log("Finding")
-        console.log(this.state)
         console.log(response.data);
         this.setState({questions: response.data})
       })
@@ -129,8 +127,8 @@ renderQuestion(){
       //form for editing a question's title and text
       <div id="editform" key={this.state.currentQuestion._id}>
       <form onSubmit={this.updateQuestion.bind(this, this.state.currentQuestion._id)}>
-      <input ref="editTitle" type="text" defaultValue={this.state.currentQuestion.title} />
-      <input ref="editText" type="text" defaultValue={this.state.currentQuestion.text} />
+      <input className ="input is-info" ref="editTitle" type="text" defaultValue={this.state.currentQuestion.title} />
+      <input className ="input is-info" ref="editText" type="text" defaultValue={this.state.currentQuestion.text} />
       <button>Submit</button>
       </form>
       <button className="abortbutton" onClick={this.abort.bind(this)}>Abort</button>

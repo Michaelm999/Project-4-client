@@ -110,6 +110,7 @@
 .newQuestion button{
   font-size: 29px;
   background-color: gold;
+  padding-top: 4px;
 }
 .SignUp input{
   margin-right: 4px;

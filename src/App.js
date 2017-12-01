@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import auth from './auth'
-import 'bulma/css/bulma.css'
+// import 'bulma/css/bulma.css'
 import NavBar from './components/NavBar'
 import User from './components/User'
 import Front from './components/Front'

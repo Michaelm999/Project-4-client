@@ -17,7 +17,7 @@ const NavBar = (props) => {
       </div>
     ) : (
       //otherwise
-      <div class="navbar-content">
+    <div class="navbar-content">
     <NavLink to='/login'>Log In</NavLink>
     <NavLink to='/signup' className="Navlink">Sign Up</NavLink>
     </div>

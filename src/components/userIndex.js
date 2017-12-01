@@ -1,6 +1,6 @@
 import React from 'react'
 //form for displaying the list of questions
-const Index = (props) => {
+const userIndex = (props) => {
 
     return(
     <div className='Index' id={props.title}>
@@ -10,4 +10,4 @@ const Index = (props) => {
 
 }
 
-export default Index
+export default userIndex

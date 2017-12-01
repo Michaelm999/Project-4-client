@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import auth from '../auth'
-
+import { Input } from 'bulma-react'
 class Form extends Component {
 
 

@@ -105,12 +105,18 @@
 .newQuestion input{
   font-size: 20px;
   width: 23%;
+  height: 40px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  border-bottom-width: 2px;
 }
 
 .newQuestion button{
   font-size: 29px;
   background-color: gold;
-  padding-top: 4px;
+  padding-top: 3px;
+  margin-top: 0px;
+  padding-bottom: 7px;
 }
 .SignUp input{
   margin-right: 4px;

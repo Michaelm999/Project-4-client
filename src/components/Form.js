@@ -24,11 +24,13 @@ state = {
 
   render() {
     return (
+      <center>
       <form className='newQuestion' onSubmit={this.handleFormSubmit.bind(this)}>
         <input className ="input is-info" ref="title" type="text" placeholder="Title" />
         <input className ="input is-info" ref="text" type="text" placeholder="Description" />
         <button>Ask Question</button>
       </form>
+      </center>
     )
   }
 }
